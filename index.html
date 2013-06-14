@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta charset="utf-8">
+		<title>Proyecto</title>
+		
+		<!--<link href="http://fredhq.com/assets/projects/roundabout2/demos/demos.css" rel="stylesheet">-->
+		<style>
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0 auto;
+				width: 42em;
+				height: 28em;
+			}
+			li {
+				height: 24em;
+				width: 24em;
+				text-align: center;
+				cursor: pointer;
+			}
+			li img {
+				width: 100%;
+			}
+			li.roundabout-in-focus {
+					cursor: default;
+			}
+			li span {
+				display: block;
+				padding-top: 6em;
+			}
+			
+			a{
+				text-decoration:none !important;
+				background-color: rgb(22, 142, 236);
+				color: white !important;
+				padding: 10px 100px;
+				width: 100px;
+				margin-top: 73px;
+				transition: all 2s;
+				-webkit-transition: all 2s;
+			}
+			
+			body{
+				background-color: #ccc;
+				transition: all 2s;
+				-webkit-transition: all 2s;
+				font-family: Palatino, Georgia, "Times New Roman", serif;
+			}
+			
+			.return {
+font-size: 1.5em;
+text-align: center;
+}
+			
+			h1 {
+font-size: 4em;
+color: rgb(0, 143, 255);
+letter-spacing: -1px;
+margin: 1em 0 0.5em;
+text-align: center;
+transition: all 2s !important;
+				-webkit-transition: all 2s !important;
+}
+		</style>
+	<style>
+
+</style></head>
+	<body>
+		<h1 id="encabezado">¿Qui&eacuten eres?</h1>
+		
+		<ul class="roundabout-holder" style="padding: 0px; position: relative;">
+			<li id="estudiante" class="roundabout-moveable-item" style="position: absolute; left: -74px; top: 51px; width: 340.608px; height: 340.608px; opacity: 0.89; z-index: 246; font-size: 14.2px;"><img src="images/1.png"></li>
+			<li id="civil" class="roundabout-moveable-item roundabout-in-focus" style="position: absolute; left: 140px; top: 30px; width: 384px; height: 384px; opacity: 1; z-index: 280; font-size: 16px;"><img src="images/2.png"></li>
+			<li id="investigador" class="roundabout-moveable-item" style="position: absolute; left: 398px; top: 51px; width: 340.608px; height: 340.608px; opacity: 0.89; z-index: 246; font-size: 14.2px;"><img src="images/3.png"></li>
+		</ul>
+
+	
+		
+		<div class="return">
+			<a href="stadistics.php">Estudiante</a>
+		</div>
+		
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.roundabout2.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('ul').roundabout();
+				
+				$('li').click(function(){
+					$idSeleccion = $(this).attr('id');
+					
+					if($idSeleccion == "estudiante"){
+						$('#encabezado').css('color','rgb(0, 143, 255)');
+						$('a').css('backgroundColor','rgb(22, 142, 236)').html('Estudiante');
+						$('body').css('backgroundColor','#ebebeb');
+					}
+					
+					if($idSeleccion == "civil"){
+					$('#encabezado').css('color','rgb(105, 204, 97)');
+						$('a').css('backgroundColor','#a4e24f').html('Civil');
+						$('body').css('backgroundColor','#fff');
+					}
+					
+					if($idSeleccion == "investigador"){
+					$('#encabezado').css('color','rgb(214, 14, 14)');
+						$('a').css('backgroundColor','rgb(236, 22, 39)').html('Investigador');
+						$('body').css('backgroundColor','#a1a1a1');
+					}
+					
+				});
+			
+			});
+			
+			
+		</script>
+		
+	
+</body></html>
